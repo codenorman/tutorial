@@ -1,0 +1,11 @@
+<h1>Name:</h1>
+<button (click)="editMode()">Edit</button>
+
+<p *ngIf="!isEditMode"><span class="label">First:</span> {{renter.firstname}} <span *ngIf="renter.middlename"><span class="label">Middle:</span> {{renter.middlename}}</span> <span class="label">Last:</span> <span class="lastname">{{renter.lastname}}</span></p>
+
+<div *ngIf="isEditMode">
+<ul>
+  <li><input type="text"  [(ngModel)]="renter.lastname"></li>
+
+</ul>
+</div>

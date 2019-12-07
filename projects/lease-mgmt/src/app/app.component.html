@@ -1,0 +1,11 @@
+<!--<app-renter [renter]="renters[0]"></app-renter>-->
+<!--<app-renter [renter]="renters[1]"></app-renter>-->
+{{count}}
+<input type="text" (change)="filterRenters($event)">
+{{ displayRenters.length }} / {{ renters.length}}
+<button (click)="addRenter()">new</button>
+<div *ngFor="let renter of displayRenters">
+  <app-renter [renter]="renter"></app-renter>
+</div>
+<hr>
+<div><pre>{{renters|json}}</pre></div>
