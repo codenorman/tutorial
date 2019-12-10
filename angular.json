@@ -120,6 +120,124 @@
           }
         }
       }
+    },
+    "ex-jest": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ex-jest",
+      "sourceRoot": "projects/ex-jest/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ex-jest",
+            "index": "projects/ex-jest/src/index.html",
+            "main": "projects/ex-jest/src/main.ts",
+            "polyfills": "projects/ex-jest/src/polyfills.ts",
+            "tsConfig": "projects/ex-jest/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/ex-jest/src/favicon.ico",
+              "projects/ex-jest/src/assets"
+            ],
+            "styles": [
+              "projects/ex-jest/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ex-jest/src/environments/environment.ts",
+                  "with": "projects/ex-jest/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ex-jest:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ex-jest:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ex-jest:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ex-jest/src/test.ts",
+            "polyfills": "projects/ex-jest/src/polyfills.ts",
+            "tsConfig": "projects/ex-jest/tsconfig.spec.json",
+            "karmaConfig": "projects/ex-jest/karma.conf.js",
+            "assets": [
+              "projects/ex-jest/src/favicon.ico",
+              "projects/ex-jest/src/assets"
+            ],
+            "styles": [
+              "projects/ex-jest/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ex-jest/tsconfig.app.json",
+              "projects/ex-jest/tsconfig.spec.json",
+              "projects/ex-jest/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ex-jest/e2e/protractor.conf.js",
+            "devServerTarget": "ex-jest:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ex-jest:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "lease-mgmt"
 }
