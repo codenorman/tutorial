@@ -6,6 +6,7 @@
     "oderwat.indent-rainbow",
     "johnpapa.vscode-peacock",
     "mhutchie.git-graph",
-    "ms-vscode.vscode-typescript-tslint-plugin"
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "formulahendry.auto-rename-tag"
   ]
 }
