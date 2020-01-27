@@ -18,7 +18,7 @@
             "main": "projects/lease-mgmt/src/main.ts",
             "polyfills": "projects/lease-mgmt/src/polyfills.ts",
             "tsConfig": "projects/lease-mgmt/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/lease-mgmt/src/favicon.ico",
               "projects/lease-mgmt/src/assets"
@@ -41,7 +41,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -136,7 +135,7 @@
             "main": "projects/ex-jest/src/main.ts",
             "polyfills": "projects/ex-jest/src/polyfills.ts",
             "tsConfig": "projects/ex-jest/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/ex-jest/src/favicon.ico",
               "projects/ex-jest/src/assets"
@@ -159,7 +158,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
