@@ -1,0 +1,74 @@
+<button (click)="toggle()">True === {{isTrue}}</button>
+
+<p>*ngIf if true [template] only</p>
+<div *ngIf="isTrue">{{trueText}}</div>
+<hr>
+
+<p>*ngIf if true [template] only [Alternate Syntax]</p>
+<ng-template [ngIf]="isTrue">
+  <div>{{trueText}}</div>
+</ng-template>
+<hr>
+
+
+<p>*ngIf if true [template] else [elseTemplate]</p>
+<div *ngIf="isTrue; else elseBlock">
+  <div>{{trueText}}</div>
+</div>
+<ng-template #elseBlock>
+  <div>{{falseText}}</div>
+</ng-template>
+<hr>
+
+<p>*ngIf if true [template] else [elseTemplate] [Alternative Syntax]</p>
+<ng-template [ngIf]="isTrue" [ngIfElse]="elseBlock">
+  <div>{{trueText}}</div>
+</ng-template>
+<ng-template #elseBlock>
+  <div>{{falseText}}</div>
+</ng-template>
+<hr>
+
+<p>*ngIf if true then [template]</p>
+<div *ngIf="isTrue; then thenBlock">
+  <div>This content is never showing</div>
+</div>
+
+<ng-template #thenBlock>
+  <div>{{trueText}}</div>
+</ng-template>
+<hr>
+
+<p>*ngIf if true then [template] [Alternative Syntax]</p>
+<ng-template [ngIf]="isTrue" [ngIfThen]="thenBlock">
+  <div>This content is never showing</div>
+</ng-template>
+<ng-template #thenBlock>
+  <div>{{trueText}}</div>
+</ng-template>
+<hr>
+
+
+<p>*ngIf if true then [template] else [elseTemplate]</p>
+<div *ngIf="isTrue; then thenBlock else elseBlock">
+  <div>This content is never showing</div>
+</div>
+<ng-template #thenBlock>
+  <div>{{trueText}}</div>
+</ng-template>
+<ng-template #elseBlock>
+  <div>{{falseText}}</div>
+</ng-template>
+<hr>
+
+<p>*ngIf if true then [template] else [elseTemplate] [Alternative Syntax]</p>
+<ng-template [ngIf]="isTrue" [ngIfThen]="thenBlock" [ngIfElse]="elseBlock">
+  <div>This content is never showing</div>
+</ng-template>
+<ng-template #thenBlock>
+  <div>{{trueText}}</div>
+</ng-template>
+<ng-template #elseBlock>
+  <div>{{falseText}}</div>
+</ng-template>
+<hr>
