@@ -1,0 +1,13 @@
+.label {
+  font-weight: lighter;
+}
+
+.lastname {
+  font-weight: 800;
+  color: red;
+  font-size: 40px;
+}
+
+p {
+  font-weight: bold;
+}
