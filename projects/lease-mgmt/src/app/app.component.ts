@@ -9,7 +9,7 @@ import {Renter} from './renter/renter';
 export class AppComponent implements OnInit {
   title = 'lease-mgmt';
   count: number = 0;
-  renters: [Renter] = [{
+  renters: Renter[] = [{
     lastname: 'Chirgwin',
     firstname: 'Brian'
   },
